@@ -33,10 +33,7 @@ int execute(node_t *line, int n)
 	cmd = findpath(mynode->str);
 	if (cmd == NULL)
 	{
-		write(1, ": ", 2);
-		write(1, &n, 3);
-		write(1, ": ", 2);
-		perror(mynode->str);
+		_perror(n, mynode->str);
 		freenode(mynode);
 		return (-1);
 	}
@@ -62,4 +59,24 @@ int execute(node_t *line, int n)
 		return (-1);
 	}
 	return (0);
+}
+
+/**
+ * _perror - print error to the stdout
+ * @ac: line number.
+ * @cmd: command.
+ */
+void _perror(char ac, char *cmd)
+{
+	char *name;
+	int i;
+
+	name = _getenv("_");
+	for (i = 0; name[i]; i++)
+		;
+	write(1, name, i);
+	write(1, ": ", 2);
+	write(1, &(ac + '0'), 4);
+	write(1, ": ", 2);
+	perror(cmd);
 }
