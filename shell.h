@@ -40,5 +40,6 @@ void tokenize(char *line, node_t **mynode);
 void env(void);
 void _sigint(int sign);
 void _perror(char ac, char *cmd);
+int _atoi(char *s);
 
 #endif
