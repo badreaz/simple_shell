@@ -25,6 +25,8 @@ int operators(char *line)
 		{
 			start[0] = '\0';
 			execute(commands, n);
+			commands->next->str = NULL;
+			freenode(commands);
 			return (0);
 		}
 		else if (_strncmp(start, " ; ", 3) == 0)
@@ -37,18 +39,28 @@ int operators(char *line)
 		{
 			start[0] = '\0';
 			if (!execute(commands, n))
+			{
+				commands->next->str = NULL;
+				freenode(commands);
 				return (0);
+			}
 			commands->next->str = start + 3;
 		}
 		else if (_strncmp(start, " || ", 4) == 0)
 		{
 			start[0] = '\0';
 			if (execute(commands, n))
+			{
+				commands->next->str = NULL;
+				freenode(commands);
 				return (0);
+			}
 			commands->next->str = start + 3;
 		}
 		start++;
 	}
 	execute(commands, n);
+	commands->next->str = NULL;
+	freemynode(line);
 	return (1);
 }
