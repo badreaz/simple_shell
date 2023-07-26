@@ -9,7 +9,7 @@
  */
 int execute(node_t *line, int n)
 {
-	char **list, *cmd, *exit_n = "exit";
+	char **list, *cmd;
 	pid_t pid;
 	int status;
 	node_t *mynode;
@@ -19,14 +19,6 @@ int execute(node_t *line, int n)
 	line->next->str = NULL;
 	if (!mynode)
 		return (0);
-	if (_strcmp(mynode->str, exit_n) == 0)
-	{
-		if (mynode->next)
-			errno = _atoi(mynode->next->str);
-		freenode(line);
-		freenode(mynode);
-		exit(errno);
-	}
 	else if (_strcmp(mynode->str, "env") == 0)
 	{
 		env();
