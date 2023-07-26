@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
 	{
 		if (isatty(STDIN_FILENO))
 			printf("$ ");
-		eof = getline(&commands->sstr, &n, file); /* read the line from stdin*/
+		eof = getline(&commands->str, &n, file); /* read the line from stdin*/
 		if (eof == EOF)  /*check the end of a file*/
 			exit(EXIT_SUCCESS);
-		operators(commands->str);
+		operators(commands);
 	}
 	return (0);
 }
