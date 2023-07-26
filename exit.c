@@ -16,6 +16,11 @@ void myexit(node_t *line, node_t *mynode, int n)
 		if (mynode->next)
 		{
 			i = _atoi(mynode->next->str);
+			for (j = 0; mynode->next->str[j]; j++)
+			{
+				if (_isdigit(mynode->next->str[j]) == 0)
+					i = -1;
+			}
 			if (i < 0)
 			{
 				i = 2;
