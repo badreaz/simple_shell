@@ -42,5 +42,6 @@ void _sigint(int sign);
 void _perror(char ac, char *cmd);
 int _atoi(char *s);
 void myexit(node_t *line, node_t *mynode, int n);
+int _isdigit(int c);
 
 #endif
