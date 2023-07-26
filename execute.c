@@ -71,12 +71,12 @@ void _perror(char ac, char *cmd)
 	char *name;
 	int i;
 
-	name = _getenv("_");
+	name = getenv("_");
 	for (i = 0; name[i]; i++)
 		;
 	write(1, name, i);
 	write(1, ": ", 2);
-	write(1, &(ac + '0'), 4);
+	write(1, (ac + '0'), 4);
 	write(1, ": ", 2);
 	perror(cmd);
 }
