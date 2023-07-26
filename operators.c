@@ -32,7 +32,7 @@ int operators(char *line)
 		{
 			start[0] = '\0';
 			execute(commands, n);
-			commands->next->str = start + 1;
+			commands->next->str = start + 2;
 		}
 		else if (_strncmp(start, " && ", 4) == 0)
 		{
