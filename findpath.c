@@ -27,7 +27,6 @@ char *findpath(char *cmd)
 			dir = strtok(NULL, ":");
 			free(new);
 		}
-		errno = 127;
 		free(path);
 		return (NULL);
 	}
