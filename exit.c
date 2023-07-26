@@ -24,10 +24,10 @@ void myexit(node_t *line, node_t *mynode, int n)
         write(1, mynode->next->str, 10);
       }
       else
-        errno = i;
+        exit(i);
     }
-		freenode(line);
-		freenode(mynode);
-		exit(errno);
+	  freenode(line);
+	  freenode(mynode);
+	  exit(0);
   }
 }
