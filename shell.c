@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 		if (eof == EOF)  /*check the end of a file*/
 		{
 			fclose(file);
+			freenode(commands);
 			exit(EXIT_SUCCESS);
 		}
 		operators(commands);
