@@ -57,6 +57,6 @@ int operators(char *line)
 		start++;
 	}
 	execute(commands, n);
-	freemynode(line);
+	freenode(line);
 	return (1);
 }
