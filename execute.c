@@ -54,9 +54,6 @@ int execute(node_t *line, int n)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	printf(":%d \n", WEXITSTATUS(status));
-	/*if (!WIFEXITED(status))
-		return (-1);*/
 	return (WEXITSTATUS(status));
 }
 
