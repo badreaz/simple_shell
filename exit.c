@@ -8,8 +8,8 @@
  */
 void myexit(node_t *line, node_t *mynode, int n)
 {
-	char *exit_n = "exit", cnum;
-	int i = 0;
+	char *exit_n = "exit", cnum, name;
+	int i = 0, j;
 	
 	if (_strcmp(mynode->str, exit_n) == 0)
 	{
@@ -20,9 +20,15 @@ void myexit(node_t *line, node_t *mynode, int n)
 			{
 				i = 2;
 				cnum = n + '0';
+				name = getenv("_");
+				for (j = 0; name[j]; j++)
+					;
+				write(1, name, j);
 				write(1, &cnum, 1);
+				write(1, ": ", 2);
 				write(1, "Illegal number: ", 17);
 				write(1, mynode->next->str, 10);
+				write(1, "\n", 1);
 			}
 		}
 		freenode(line);
