@@ -10,7 +10,7 @@ void myexit(node_t *line, node_t *mynode, int n)
 {
 	char *exit_n = "exit", cnum, *name;
 	int i = 0, j;
-	
+
 	if (_strcmp(mynode->str, exit_n) == 0)
 	{
 		if (mynode->next)
