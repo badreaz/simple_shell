@@ -54,6 +54,7 @@ int execute(node_t *line, int n)
 	}
 	wait(&status);
 	free(cmd);
+	freenode(line);
 	freenode(mynode);
 	freelist(list);
 	if (!WIFEXITED(status))
