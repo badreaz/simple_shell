@@ -39,5 +39,6 @@ int operators(char *line);
 void tokenize(char *line, node_t **mynode);
 void env(void);
 void _sigint(int sign);
+void _perror(char ac, char *cmd);
 
 #endif
