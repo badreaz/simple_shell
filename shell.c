@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	size_t n = 1024;
-	char *buffer;
+	node_t *commands;
 	char eof;
 	FILE *file = stdin;
 
@@ -21,16 +21,19 @@ int main(int argc, char *argv[])
 		if (file == NULL)
 			exit(EXIT_FAILURE);
 	}
-	buffer = malloc(n);
+	commands = malloc(sizeof(node_t));
+	commands->next = malloc(sizeof(node_t));
+	commands->str = malloc(n);
+	commands->next->next = NULL;
 	errno = 0;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			printf("$ ");
-		eof = getline(&buffer, &n, file); /* read the line from stdin*/
+		eof = getline(&commands->sstr, &n, file); /* read the line from stdin*/
 		if (eof == EOF)  /*check the end of a file*/
 			exit(EXIT_SUCCESS);
-		operators(buffer);
+		operators(commands->str);
 	}
 	return (0);
 }
