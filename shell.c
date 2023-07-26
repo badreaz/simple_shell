@@ -32,7 +32,10 @@ int main(int argc, char *argv[])
 			printf("$ ");
 		eof = getline(&commands->str, &n, file); /* read the line from stdin*/
 		if (eof == EOF)  /*check the end of a file*/
+		{
+			fclose(file);
 			exit(EXIT_SUCCESS);
+		}
 		operators(commands);
 	}
 	return (0);
