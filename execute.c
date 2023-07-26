@@ -21,6 +21,8 @@ int execute(node_t *line, int n)
 		return (0);
 	if (_strcmp(mynode->str, exit_n) == 0)
 	{
+		if (mynode->next)
+			errno = _atoi(mynode->next->str);
 		freenode(line);
 		freenode(mynode);
 		exit(errno);
