@@ -19,8 +19,7 @@ void myexit(node_t *line, node_t *mynode, int n)
 			if (i < 0)
 			{
 				i = 2;
-				_perror(n, mynode->str);
-				write(1, ": ", 2);
+				write(1, "Illegal number: ", 17);
 				write(1, mynode->next->str, 10);
 			}
 		}
