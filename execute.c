@@ -55,7 +55,7 @@ int execute(node_t *line, int n)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	if (WIFEXITED(status) == 0)
+	if (WIFEXITED(status))
 	{
 		errno = WEXITSTATUS(status);
 		printf("%d\n", errno);
