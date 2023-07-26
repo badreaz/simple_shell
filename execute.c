@@ -54,12 +54,9 @@ int execute(node_t *line, int n)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	if (WIFSIGNALED(status))
-	{
-		errno = WTERMSIG(status);
-		/*printf("%d\n", errno);*/
+	printf(":%d \n", WIFEXITED(status));
+	if (!WIFEXITED(status))
 		return (-1);
-	}
 	return (0);
 }
 
