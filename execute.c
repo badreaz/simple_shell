@@ -58,7 +58,7 @@ int execute(node_t *line, int n)
 	if (WIFEXITED(status))
 	{
 		errno = WEXITSTATUS(status);
-		printf("%d\n", errno);
+		/*printf("%d\n", errno);*/
 		return (-1);
 	}
 	return (0);
