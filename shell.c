@@ -16,7 +16,11 @@ int main(int argc, char *argv[])
 
 	signal(SIGINT, _sigint);
 	if (argc > 1)
+	{
 		file = fopen(argv[1], "r");
+		if (file == NULL)
+			exit(EXIT_FAILURE);
+	}
 	buffer = malloc(n);
 	errno = 0;
 	while (1)
