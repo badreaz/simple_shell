@@ -55,7 +55,7 @@ int execute(node_t *line, int n)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	if (!WIFEXITED(status))
+	if (WIFEXITED(status))
 	{
 		printf("%d\n", status);
 		return (-1);
