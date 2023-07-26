@@ -8,7 +8,7 @@
  */
 void myexit(node_t *line, node_t *mynode, int n)
 {
-	char *exit_n = "exit";
+	char *exit_n = "exit", cnum;
 	int i = 0;
 	
 	if (_strcmp(mynode->str, exit_n) == 0)
@@ -19,6 +19,8 @@ void myexit(node_t *line, node_t *mynode, int n)
 			if (i < 0)
 			{
 				i = 2;
+				cnum = n + '0';
+				write(1, &cnum, 1);
 				write(1, "Illegal number: ", 17);
 				write(1, mynode->next->str, 10);
 			}
