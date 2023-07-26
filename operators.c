@@ -25,7 +25,6 @@ int operators(char *line)
 		{
 			start[0] = '\0';
 			execute(commands, n);
-			commands->next->str = NULL;
 			freenode(commands);
 			return (0);
 		}
@@ -40,7 +39,6 @@ int operators(char *line)
 			start[0] = '\0';
 			if (!execute(commands, n))
 			{
-				commands->next->str = NULL;
 				freenode(commands);
 				return (0);
 			}
@@ -51,7 +49,6 @@ int operators(char *line)
 			start[0] = '\0';
 			if (execute(commands, n))
 			{
-				commands->next->str = NULL;
 				freenode(commands);
 				return (0);
 			}
@@ -60,7 +57,6 @@ int operators(char *line)
 		start++;
 	}
 	execute(commands, n);
-	commands->next->str = NULL;
 	freemynode(line);
 	return (1);
 }
