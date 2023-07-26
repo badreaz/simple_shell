@@ -12,7 +12,7 @@ void myexit(node_t *line, node_t *mynode, int n)
   int i = -1;
 
   if (_strcmp(mynode->str, exit_n) == 0)
-	{
+  {
     if (mynode->next)
     {
       i = _atoi(mynode->next->str);
@@ -28,5 +28,5 @@ void myexit(node_t *line, node_t *mynode, int n)
 		freenode(line);
 		freenode(mynode);
 		exit(errno);
-	}
+  }
 }
