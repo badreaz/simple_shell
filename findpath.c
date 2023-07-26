@@ -31,7 +31,7 @@ char *findpath(char *cmd)
 		free(path);
 		return (NULL);
 	}
-	return (cmd);
+	return (_strdup(cmd));
 }
 
 /**
