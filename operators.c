@@ -37,7 +37,7 @@ int operators(char *line)
 		else if (_strncmp(start, "&&", 2) == 0)
 		{
 			start[0] = '\0';
-			if (execute(commands, n))
+			if (execute(commands, n) == -1)
 			{
 				freenode(commands);
 				return (0);
@@ -47,7 +47,7 @@ int operators(char *line)
 		else if (_strncmp(start, "||", 2) == 0)
 		{
 			start[0] = '\0';
-			if (!execute(commands, n))
+			if (execute(commands, n) == 0)
 			{
 				freenode(commands);
 				return (0);
