@@ -24,6 +24,7 @@ void myexit(node_t *line, node_t *mynode, int n)
 				for (j = 0; name[j]; j++)
 					;
 				write(1, name, j);
+				write(1, ": ", 2);
 				write(1, &cnum, 1);
 				write(1, ": ", 2);
 				write(1, "Illegal number: ", 17);
