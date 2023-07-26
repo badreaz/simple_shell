@@ -19,7 +19,8 @@ int execute(node_t *line, int n)
 	line->next->str = NULL;
 	if (!mynode)
 		return (0);
-	else if (_strcmp(mynode->str, "env") == 0)
+	myexit(line, mynode, n);
+	if (_strcmp(mynode->str, "env") == 0)
 	{
 		env();
 		return (0);
