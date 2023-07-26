@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	errno = 0;
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO) && argc == 1)
 			printf("$ ");
 		eof = getline(&commands->str, &n, file); /* read the line from stdin*/
 		if (eof == EOF)  /*check the end of a file*/
