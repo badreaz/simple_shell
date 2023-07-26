@@ -28,11 +28,11 @@ int operators(char *line)
 			freenode(commands);
 			return (0);
 		}
-		else if (_strncmp(start, " ; ", 3) == 0)
+		else if (_strncmp(start, " ;", 2) == 0)
 		{
 			start[0] = '\0';
 			execute(commands, n);
-			commands->next->str = start + 2;
+			commands->next->str = start + 1;
 		}
 		else if (_strncmp(start, " && ", 4) == 0)
 		{
