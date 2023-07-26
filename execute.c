@@ -55,9 +55,9 @@ int execute(node_t *line, int n)
 	freenode(mynode);
 	freelist(list);
 	printf(":%d \n", WEXITSTATUS(status));
-	if (!WIFEXITED(status))
-		return (-1);
-	return (0);
+	/*if (!WIFEXITED(status))
+		return (-1);*/
+	return (WEXITSTATUS(status));
 }
 
 /**
