@@ -28,13 +28,13 @@ void myexit(node_t *line, node_t *mynode, int n)
 				name = getenv("_");
 				for (j = 0; name[j]; j++)
 					;
-				write(1, name, j);
-				write(1, ": ", 2);
-				write(1, &cnum, 1);
-				write(1, ": ", 2);
-				write(1, "Illegal number: ", 17);
-				write(1, mynode->next->str, 10);
-				write(1, "\n", 1);
+				write(2, name, j);
+				write(2, ": ", 2);
+				write(2, &cnum, 1);
+				write(2, ": ", 2);
+				write(2, "Illegal number: ", 17);
+				write(2, mynode->next->str, 10);
+				write(2, "\n", 1);
 			}
 			i = i % 256;
 		}
