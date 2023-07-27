@@ -33,15 +33,15 @@ char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 void freelist(char **list);
-int execute(node_t *list, int n);
+int execute(node_t *list, int n, int st);
 int _strncmp(char *s1, char *s2, int len);
-int operators(node_t *commands);
+int operators(node_t *commands, int st);
 void tokenize(char *line, node_t **mynode);
 void env(void);
 void _sigint(int sign);
 void _perror(char ac, char *cmd);
 int _atoi(char *s);
-void myexit(node_t *line, node_t *mynode, int n);
+void myexit(node_t *line, node_t *mynode, int n, int st);
 int _isdigit(int c);
 
 #endif
