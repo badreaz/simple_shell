@@ -50,6 +50,8 @@ int execute(node_t *line, int n, int *st)
 	freelist(list);
 	if (WIFEXITED(status))
 		*st = 2;
+	else
+		*st = 0;
 	return (WEXITSTATUS(status));
 }
 
