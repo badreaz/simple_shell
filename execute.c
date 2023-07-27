@@ -48,7 +48,8 @@ int execute(node_t *line, int n, int *st)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	*st = 2;
+	if (WIFEXITED(status))
+		*st = 2;
 	return (WEXITSTATUS(status));
 }
 
