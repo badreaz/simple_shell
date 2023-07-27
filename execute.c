@@ -64,9 +64,9 @@ void _perror(char ac, char *cmd)
 	name = getenv("_");
 	for (i = 0; name[i]; i++)
 		;
-	write(1, name, i);
-	write(1, ": ", 2);
-	write(1, &ac, 1);
-	write(1, ": ", 2);
+	write(2, name, i);
+	write(2, ": ", 2);
+	write(2, &ac, 1);
+	write(2, ": ", 2);
 	perror(cmd);
 }
