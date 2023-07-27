@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		{
 			fclose(file);
 			freenode(commands);
-			exit(EXIT_SUCCESS);
+			exit(*st);
 		}
 		operators(commands, &st);
 	}
