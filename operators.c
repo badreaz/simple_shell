@@ -7,7 +7,7 @@
  *
  * Return: 1 if there is no operators, otherwise 0..
  */
-int operators(node_t *commands, int st)
+int operators(node_t *commands, int *st)
 {
 	char *start;
 	static int n = 1;
