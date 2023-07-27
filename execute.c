@@ -8,7 +8,7 @@
  *
  * Return: 0 if true, otherwise -1.
  */
-int execute(node_t *line, int n, int st)
+int execute(node_t *line, int n, int *st)
 {
 	char **list, *cmd;
 	pid_t pid;
@@ -48,7 +48,7 @@ int execute(node_t *line, int n, int st)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
-	st = 2;
+	*st = 2;
 	return (WEXITSTATUS(status));
 }
 
