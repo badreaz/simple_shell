@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	node_t *commands;
 	char eof;
 	FILE *file = stdin;
+	int st = 0;
 
 	signal(SIGINT, _sigint);
 	if (argc > 1)
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
 			freenode(commands);
 			exit(EXIT_SUCCESS);
 		}
-		operators(commands);
+		operators(commands, st);
 	}
 	return (0);
 }
