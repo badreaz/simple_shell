@@ -29,7 +29,7 @@ void myexit(node_t *line, node_t *mynode, int n, int *st)
 				name = getenv("_");
 				for (j = 0; name[j]; j++)
 					;
-				write(2, name, j);
+				write(2, "./hsh", j);
 				write(2, ": ", 2);
 				write(2, &cnum, 1);
 				write(2, ": ", 2);
