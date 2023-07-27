@@ -32,7 +32,7 @@ void myexit(node_t *line, node_t *mynode, int n, int *st)
 				write(2, "./hsh", j);
 				write(2, ": ", 2);
 				write(2, &cnum, 1);
-				write(2, ": exit: Illegal number: ", 30);
+				write(2, ": exit: Illegal number: ", 26);
 				write(2, mynode->next->str, 10);
 				write(2, "\n", 1);
 			}
