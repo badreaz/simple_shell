@@ -4,10 +4,11 @@
  * execute - execute commands with it's argument
  * @line: linked list of commands.
  * @n: line number.
+ * @st: status.
  *
  * Return: 0 if true, otherwise -1.
  */
-int execute(node_t *line, int n)
+int execute(node_t *line, int n, int st)
 {
 	char **list, *cmd;
 	pid_t pid;
@@ -19,7 +20,7 @@ int execute(node_t *line, int n)
 	line->next->str = NULL;
 	if (!mynode)
 		return (0);
-	myexit(line, mynode, n);
+	myexit(line, mynode, n, st);
 	if (_strcmp(mynode->str, "env") == 0)
 	{
 		env();
@@ -47,6 +48,7 @@ int execute(node_t *line, int n)
 	free(cmd);
 	freenode(mynode);
 	freelist(list);
+	st = WEXITSTATUS(status);
 	return (WEXITSTATUS(status));
 }
 
