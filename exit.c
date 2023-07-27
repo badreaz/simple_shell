@@ -5,8 +5,9 @@
  * @line: command line.
  * @mynode: commands and arguments.
  * @n: line number.
+ * @st: status.
  */
-void myexit(node_t *line, node_t *mynode, int n)
+void myexit(node_t *line, node_t *mynode, int n, int st)
 {
 	char *exit_n = "exit", cnum, *name;
 	int i = 0, j;
@@ -23,7 +24,7 @@ void myexit(node_t *line, node_t *mynode, int n)
 			}
 			if (i < 0)
 			{
-				i = 2;
+				st = 2;
 				cnum = n + '0';
 				name = getenv("_");
 				for (j = 0; name[j]; j++)
@@ -36,10 +37,10 @@ void myexit(node_t *line, node_t *mynode, int n)
 				write(2, mynode->next->str, 10);
 				write(2, "\n", 1);
 			}
-			i = i % 256;
+			st = i % 256;
 		}
 		freenode(line);
 		freenode(mynode);
-		exit(i);
+		exit(st);
 	}
 }
