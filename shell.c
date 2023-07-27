@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 	commands->next = malloc(sizeof(node_t));
 	commands->str = malloc(n);
 	commands->next->next = NULL;
-	errno = 0;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO) && argc == 1)
@@ -38,7 +37,7 @@ int main(int argc, char *argv[])
 			freenode(commands);
 			exit(EXIT_SUCCESS);
 		}
-		operators(commands, st);
+		operators(commands, &st);
 	}
 	return (0);
 }
