@@ -7,7 +7,7 @@
  * @n: line number.
  * @st: status.
  */
-void myexit(node_t *line, node_t *mynode, int n, int st)
+void myexit(node_t *line, node_t *mynode, int n, int *st)
 {
 	char *exit_n = "exit", cnum, *name;
 	int i = 0, j;
@@ -24,7 +24,7 @@ void myexit(node_t *line, node_t *mynode, int n, int st)
 			}
 			if (i < 0)
 			{
-				st = 2;
+				*st = 2;
 				cnum = n + '0';
 				name = getenv("_");
 				for (j = 0; name[j]; j++)
@@ -38,10 +38,10 @@ void myexit(node_t *line, node_t *mynode, int n, int st)
 				write(2, "\n", 1);
 			}
 			else if (i > 256)
-				st = i % 256;
+				*st = i % 256;
 		}
 		freenode(line);
 		freenode(mynode);
-		exit(st);
+		exit(*st);
 	}
 }
