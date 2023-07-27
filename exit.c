@@ -39,6 +39,8 @@ void myexit(node_t *line, node_t *mynode, int n, int *st)
 			}
 			else if (i > 256)
 				*st = i % 256;
+			else
+				*st = i;
 		}
 		freenode(line);
 		freenode(mynode);
