@@ -20,7 +20,11 @@ int main(int argc, char *argv[])
 	{
 		file = fopen(argv[1], "r");
 		if (file == NULL)
-			exit(EXIT_FAILURE);
+		{
+			write(2, "./hsh: 0: Can't open", 20);
+			write(2, argv[1], 20);
+			exit(127);
+		}
 	}
 	commands = malloc(sizeof(node_t));
 	commands->next = malloc(sizeof(node_t));
