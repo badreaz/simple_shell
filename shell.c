@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
 		{
 			write(2, "./hsh: 0: Can't open", 20);
 			write(2, argv[1], 20);
+			write(2, "\n", 1);
 			exit(127);
 		}
 	}
