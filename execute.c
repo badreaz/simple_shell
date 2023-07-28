@@ -15,7 +15,6 @@ int execute(node_t *line, int n, int *st)
 	int status;
 	node_t *mynode;
 
-	mynode = NULL;
 	tokenize(line->next->str, &mynode);
 	line->next->str = NULL;
 	if (!mynode)
