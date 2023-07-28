@@ -70,6 +70,8 @@ void _perror(char ac, char *cmd)
 	write(2, ": ", 2);
 	write(2, &ac, 1);
 	write(2, ": ", 2);
-	write(2, cmd, 10);
+	for (i = 0; cmd[i]; i++)
+		;
+	write(2, cmd, i);
 	write(2, ": not found\n", 12);
 }
