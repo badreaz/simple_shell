@@ -71,5 +71,5 @@ void _perror(char ac, char *cmd)
 	write(2, &ac, 1);
 	write(2, ": ", 2);
 	write(2, cmd, 10);
-	write(2, ": not found", 11);
+	write(2, ": not found\n", 12);
 }
