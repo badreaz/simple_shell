@@ -29,6 +29,7 @@ int execute(node_t *line, int n, int *st)
 	cmd = findpath(mynode->str);
 	if (cmd == NULL)
 	{
+		*st = 127;
 		_perror(n, mynode->str);
 		freenode(mynode);
 		return (-1);
