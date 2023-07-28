@@ -17,6 +17,7 @@ char *findpath(char *cmd)
 		while (dir)
 		{
 			new = malloc(_strlen(dir) + _strlen(cmd) + 3);
+			new[0] = '\0';
 			_strcat(new, dir);
 			_strcat(_strcat(new, "/"), cmd);
 			if (!_which(new))
