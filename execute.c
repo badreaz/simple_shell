@@ -15,6 +15,7 @@ int execute(node_t *line, int n, int *st)
 	int status;
 	node_t *mynode;
 
+	mynode = NULL;
 	tokenize(line->next->str, &mynode);
 	line->next->str = NULL;
 	if (!mynode)
@@ -39,8 +40,7 @@ int execute(node_t *line, int n, int *st)
 	{
 		execve(cmd, list, environ);
 		free(cmd);
-		freenode(line);
-		freenode(mynode);
+		freenode(line), freenode(mynode);
 		freelist(list);
 		exit(EXIT_FAILURE);
 	}
